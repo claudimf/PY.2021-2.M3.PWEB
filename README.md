@@ -1,5 +1,9 @@
 # Projeto Integrador 3 módulo "Python para Web"(PY.2021-2.M3.PWEB) UTFPR(Universidade Tecnológica Federal do Paraná).
 
+## Etapas ##
+
+[Aula 1](https://github.com/claudimf/PY.2021-2.M3.PWEB/blob/main/documentos/webconf1.pdf)  
+
 ## Como utilizar? ##
 
 **:warning: Warning:** É necessário ter o Docker instalado:
@@ -26,10 +30,42 @@ Para resetar a aplicação, execute:
 docker-compose down && docker-compose up
 ```
 
-#### Testando a conexão com o banco de dados
+#### Rodar migrações
 
 ```sh
-sudo docker-compose run --rm aplicacao python3 app/test-postgres.py
+sudo docker-compose run --rm web python manage.py makemigrations
+sudo docker-compose run --rm web python manage.py migrate
+```
+
+#### Acessar o Shell
+
+```sh
+sudo docker-compose run --rm web python manage.py shell
+```
+
+#### Criar dados
+
+```sh
+from seriados.models import Serie, Temporada, Episodio
+
+Serie.objects.all()
+nova = Serie(nome='Doctor Who')
+nova.save()
+print(nova.id)
+print(nova.nome)
+Serie.objects.all()
+```
+
+#### Criar aplicação
+
+```sh
+sudo docker-compose run --rm web python manage.py startapp seriados
+```
+
+#### Criar superuser
+
+```sh
+sudo docker-compose run --rm web python manage.py createsuperuser
 ```
 
 #### Rodar o banco de dados

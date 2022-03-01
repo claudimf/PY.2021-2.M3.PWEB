@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Lista de Séries</h1>
+{% for series in lista_series %}
+  <p>{{ series.nome }}</p>
+{% endfor %}
+{% endblock %}
