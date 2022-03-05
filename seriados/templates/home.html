@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<p><a href={% url 'seriados:home' %}>Home</a></p>
+
+<p><a href={% url 'seriados:series_list' %}>Series</a></p>
+<p><a href={% url 'seriados:episodio_list' %}>Episódios</a></p>
+
+<p>
+	<a href={% url 'seriados:episodio_nota_list' nota='A'%}>Episódios Nota A</a> -
+	<a href={% url 'seriados:episodio_nota_list' nota='B'%}>Episódios Nota B</a> -
+	<a href={% url 'seriados:episodio_nota_list' nota='C'%}>Episódios Nota C</a>
+</p>
+
+<p><a href={% url 'seriados:temporadas' %}>Temporadas</a></p>
+<p><a href={% url 'seriados:about' %}>Sobre</a></p>
+<p><a href={% url 'seriados:contact' %}>Contato</a></p>
+<p><a href={% url 'admin:index' %}>ADMIN</a></p>
+
+{% endblock %}

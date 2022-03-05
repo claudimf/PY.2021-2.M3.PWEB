@@ -16,7 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from seriados import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('seriados/', include('seriados.urls')),
+    path('episodios/<int:pk>/', views.episodio_details, name='episodio_details'),
+    path('episodios/nota/<str:nota>/', views.episodio_nota_list, name='episodio_nota_list'),
 ]
