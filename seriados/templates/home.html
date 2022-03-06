@@ -1,23 +1,17 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
-<p><a href={% url 'seriados:home' %}>Home</a></p>
-<p><a href={% url 'seriados:series_list' %}>Series</a></p>
-<p><a href={% url 'seriados:episodio_list' %}>Episódios</a></p>
-<p>
-	<a href={% url 'seriados:episodio_nota_list' nota='A'%}>Episódios Nota A</a> -
-	<a href={% url 'seriados:episodio_nota_list' nota='B'%}>Episódios Nota B</a> -
-	<a href={% url 'seriados:episodio_nota_list' nota='C'%}>Episódios Nota C</a>
-</p>
-<p><a href={% url 'seriados:temporadas' %}>Temporadas</a></p>
-<p><a href={% url 'seriados:about' %}>Sobre</a></p>
-<p><a href={% url 'seriados:contact' %}>Contato</a></p>
-<p><a href={% url 'admin:index' %}>ADMIN</a></p>
-
-<h3>Procurar episódio</h3>
-
-<input id='input_search' type="text" placeholder='Search..'>
-<button id="btn_search">Procurar Episódio</button>
+<div class="row">
+	<div class="col-6 col-md-4">
+		<img src="{% static 'seriados/star-icon.png' %}" alt="imagem">
+	</div>
+	<div class="col-6 col-md-8">
+		<h3>Procurar episódio</h3>
+		<input id='input_search' type="text" placeholder="Search..">
+		<button id="btn_search">Procurar Episódio</button>
+	</div>
+</div>
 
 <script 
 	src="https://code.jquery.com/jquery-3.6.0.min.js" 

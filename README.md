@@ -4,7 +4,9 @@
 
 [Aula 1](https://github.com/claudimf/PY.2021-2.M3.PWEB/blob/main/documentos/webconf1.pdf)  
 [Aula 2](https://github.com/claudimf/PY.2021-2.M3.PWEB/blob/main/documentos/01-Models.pdf)  
-[Aula 3](https://github.com/claudimf/PY.2021-2.M3.PWEB/blob/main/documentos/04-Forms-ModelForms-Views%20Gen%C3%A9ricas%20de%20Edi%C3%A7%C3%A3o.pdf)  
+[Aula 3](https://github.com/claudimf/PY.2021-2.M3.PWEB/blob/main/documentos/02-urls-views-templates.pdf)  
+[Aula 4](https://github.com/claudimf/PY.2021-2.M3.PWEB/blob/main/documentos/04-Forms-ModelForms-Views%20Gen%C3%A9ricas%20de%20Edi%C3%A7%C3%A3o.pdf)  
+[Aula 5](https://github.com/claudimf/PY.2021-2.M3.PWEB/blob/main/documentos/webconf2.pdf)  
 
 ## Como utilizar? ##
 

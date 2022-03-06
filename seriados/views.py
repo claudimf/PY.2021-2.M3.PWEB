@@ -22,6 +22,10 @@ class HomeView(View):
 class TemporadaListView(ListView):
   template_name = 'temporada_list.html'
   model = Temporada
+  
+  def get_queryset(self):
+    search = self.request.GET.get('search', "")
+    return super().get_queryset().filter(serie__nome__contains=search)
 
 
 class TemporadaDetail(DetailView):
@@ -52,6 +56,31 @@ class TemporadaDeleteView(DeleteView):
   
   def get_success_url(self):
     return reverse('seriados:temporada_list')
+
+
+class EpisodioCreateView(CreateView):
+  template_name = 'form_generic.html'
+  model = Episodio
+  fields = ['temporada', 'data', 'titulo']
+
+
+class TemporadaUpdateView(UpdateView):
+  template_name = 'form_generic.html'
+  model = Temporada
+  fields = ['serie', 'numero']
+
+
+class TemporadaDeleteView(DeleteView):
+  template_name = "temporada_confirm_delete.html"
+  model = Temporada
+  
+  def get_success_url(self):
+    return reverse('seriados:temporada_list')
+
+
+class HomeView(View):
+  def get(self, request):
+    return render(request, 'home.html', {})
 
 def prepare_data_list(objects, fields_name):
   labels = list()
