@@ -122,6 +122,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Adicionar (para static do projeto):
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    # ’/var/www/static/’, # para produção
+    ]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

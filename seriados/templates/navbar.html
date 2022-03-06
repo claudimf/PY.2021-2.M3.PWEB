@@ -1,0 +1,47 @@
+<a class="navbar-brand" href={% url 'seriados:home' %}>Home</a>
+<a class="navbar-brand" href={% url 'seriados:serie_list' %}>Series</a>
+<a class="navbar-brand" href={% url 'seriados:temporada_list' %}>Temporadas</a>
+
+<div class="dropdown">
+	<button 
+		class="btn btn-secondary dropdown-toggle" 
+		type="button" 
+		id="dropdownMenuButton" 
+		data-bs-toggle="dropdown" 
+		aria-expanded="false">
+		Episódios
+	</button>
+	<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		<li>
+			<a class="dropdown-item" href={% url 'seriados:episodio_list' %}>
+				Todos
+			</a>
+		</li>
+		<li>
+			<a 
+				class="dropdown-item" 
+				href={% url 'seriados:episodio_nota_list' nota='A'%}>
+				Nota A
+			</a>
+		</li>
+		<li>
+			<a 
+			class="dropdown-item" 
+			href={% url 'seriados:episodio_nota_list' 
+			nota='B'%}>
+				Nota B
+			</a>
+		</li>
+		<li>
+			<a 
+			class="dropdown-item"
+			href={% url 'seriados:episodio_nota_list' 
+			nota='C'%}>
+				Nota C
+			</a>
+		</li>
+	</ul>
+</div>
+<a class="navbar-brand" href={% url 'seriados:about' %}>Sobre</a>
+<a class="navbar-brand" href={% url 'seriados:contact' %}>Contato</a>
+<a class="navbar-brand" href={% url 'admin:index' %}>ADMIN</a>

@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings # ADICIONE settings
+from django.conf.urls.static import static # ADICIONE static
 
 from seriados import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('seriados/', include('seriados.urls')),
-    path('episodios/<int:pk>/', views.episodio_details, name='episodio_details'),
-    path('episodios/nota/<str:nota>/', views.episodio_nota_list, name='episodio_nota_list'),
-]
+	path('admin/', admin.site.urls),
+	path('seriados/', include('seriados.urls')),
+	path('episodios/<int:pk>/', views.episodio_details, name='episodio_details'),
+	path('episodios/nota/<str:nota>/', views.episodio_nota_list, name='episodio_nota_list'),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
