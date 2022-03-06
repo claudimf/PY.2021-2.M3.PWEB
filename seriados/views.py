@@ -6,9 +6,33 @@ from django.urls import reverse
 from django.views import View
 from django.views.generic import TemplateView, ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.db.models import Q
 
 from .models import Serie, Temporada, Episodio
 from .forms import SerieForm, TemporadaForm
+
+
+class EpisodioBuscaListView(ListView):
+  template_name = 'episodio_busca_list.html'
+  model = Episodio
+  def get_queryset(self):
+    search = self.request.GET.get('search', "")
+    q = Q(titulo__contains=search) | Q(temporada__serie__nome__contains=search)
+
+
+    for term in search.split():
+      q = q | Q(titulo__contains=term)
+      q = q | Q(temporada__serie__nome__contains=term)
+      try:
+        i_term = int(term)
+      except ValueError:
+        pass
+      else:
+        q = q | Q(temporada__numero=i_term)
+
+    qs = super().get_queryset().filter(q)
+    return qs
+
 
 class Contact(TemplateView):
   template_name = 'contact.html'
@@ -150,7 +174,14 @@ def episodio_details(request, pk):
   return render(request, 'details.html', context)
 
 def episodio_nota_list(request, nota):
-  return render(request, 'home.html', {})
+  search = request.GET.get('search', "")
+  objects = Episodio.objects.filter(reviewepisodio__nota=nota if nota else search)
+  context = {
+      'objects': objects,
+      'nota':nota,
+      'detail_url': 'seriados:episodio_details',
+  }
+  return render(request, 'episodio/episodio_nota_list.html', context)
 
 def serie_insert(request):
   if request.method == 'GET':

@@ -26,4 +26,5 @@ urlpatterns = [
     path('temporada/<int:pk>/editar/', views.TemporadaUpdateView.as_view(), name='temporada_update'),
     path('temporada/<int:pk>/excluir/', views.TemporadaDeleteView.as_view(), name='temporada_excluir'),
     path('', views.HomeView.as_view(), name='home'),
+    path('episodio/busca/', views.EpisodioBuscaListView.as_view(),name='episodio_busca_list'),
 ]

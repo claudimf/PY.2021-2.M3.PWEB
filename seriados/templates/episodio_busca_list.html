@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Lista de Episódios</h1>
+<input id=’input_search’ type="text" placeholder="Search.."
+value="{{view.request.GET.search}}">
+<button id="btn_search">Procurar Episódio</button>
+<table border="1px">
+	<tr>
+		<th>Série</th>
+		<th>Temporada</th>
+		<th>Título</th>
+		<th>Data</th>
+		<th>Detalhes</th>
+	</tr>
+	{% for object in object_list %}
+		<tr>
+			<td>{{ object.temporada.serie.nome }}</td>
+			<td>{{ object.temporada.numero }}</td>
+			<td>{{ object.titulo }}</td>
+			<td>{{ object.data }}</td>
+			<td>
+				<a href={% url ’seriados:episodio_details’ pk=object.pk %}>
+					Ver...
+				</a>
+			</td>
+		</tr>
+	{% endfor %}
+</table>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#btn_search").click(function() {
+			search = $("#input_search").val();
+			url = '{% url 'seriados:episodio_busca_list’' %}' + '?' +
+			$.param({search:search});
+			window.location.href = url;
+		});
+	});
+</script>
+
+{% endblock %}
