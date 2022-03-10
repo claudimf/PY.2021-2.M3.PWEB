@@ -8,6 +8,7 @@
 [Aula 4](https://github.com/claudimf/PY.2021-2.M3.PWEB/blob/main/documentos/04-Forms-ModelForms-Views%20Gen%C3%A9ricas%20de%20Edi%C3%A7%C3%A3o.pdf)  
 [Aula 5](https://github.com/claudimf/PY.2021-2.M3.PWEB/blob/main/documentos/webconf2.pdf)  
 [Aula 6](https://github.com/claudimf/PY.2021-2.M3.PWEB/blob/main/documentos/06-consultas-Q_Auth.pdf)  
+[Aula 7](https://github.com/claudimf/PY.2021-2.M3.PWEB/blob/main/documentos/07-Auth.pdf)  
 
 ## Como utilizar? ##
 

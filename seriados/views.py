@@ -1,5 +1,5 @@
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.forms.models import model_to_dict
@@ -12,9 +12,6 @@ from django.db.models import Q
 
 from .models import Serie, Temporada, Episodio
 from .forms import SerieForm, TemporadaForm
-
-# @login_required
-# def serie_insert(request):
 
 
 class EpisodioBuscaListView(ListView):
@@ -68,12 +65,14 @@ class EpisodioCreateView(CreateView):
   fields = ['temporada', 'data', 'titulo']
 
 
-class TemporadaCreateView(LoginRequiredMixin, CreateView):
+class TemporadaCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
+  permission_required = 'seriados.add_temporada'
   template_name = 'form_generic.html'
   form_class = TemporadaForm
 
 
-class TemporadaUpdateView(LoginRequiredMixin, UpdateView):
+class TemporadaUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
+  permission_required = ('seriados.view_temporada', 'seriados.change_temporada')
   template_name = 'form_generic.html'
   model = Temporada
   fields = ['serie', 'numero']
@@ -188,6 +187,9 @@ def episodio_nota_list(request, nota):
   }
   return render(request, 'episodio/episodio_nota_list.html', context)
 
+
+@login_required
+@permission_required('seriados.add_serie', raise_exception=True)
 def serie_insert(request):
   if request.method == 'GET':
     form = SerieForm()
