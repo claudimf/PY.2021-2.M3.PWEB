@@ -1,3 +1,5 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.forms.models import model_to_dict
@@ -10,6 +12,9 @@ from django.db.models import Q
 
 from .models import Serie, Temporada, Episodio
 from .forms import SerieForm, TemporadaForm
+
+# @login_required
+# def serie_insert(request):
 
 
 class EpisodioBuscaListView(ListView):
@@ -57,24 +62,24 @@ class TemporadaDetail(DetailView):
   model = Temporada
 
 
-class TemporadaCreateView(CreateView):
-  template_name = 'form_generic.html'
-  form_class = TemporadaForm
-
-
 class EpisodioCreateView(CreateView):
   template_name = 'form_generic.html'
   model = Episodio
   fields = ['temporada', 'data', 'titulo']
 
 
-class TemporadaUpdateView(UpdateView):
+class TemporadaCreateView(LoginRequiredMixin, CreateView):
+  template_name = 'form_generic.html'
+  form_class = TemporadaForm
+
+
+class TemporadaUpdateView(LoginRequiredMixin, UpdateView):
   template_name = 'form_generic.html'
   model = Temporada
   fields = ['serie', 'numero']
 
 
-class TemporadaDeleteView(DeleteView):
+class TemporadaDeleteView(LoginRequiredMixin, DeleteView):
   template_name = "temporada_confirm_delete.html"
   model = Temporada
   

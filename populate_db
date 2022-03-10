@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+python manage.py sqlflush
+python manage.py makemigrations
+python manage.py migrate
+
+for file in ./seriados/fixtures/*.json
+do
+echo "runnning fixture: $file"
+  python manage.py loaddata "$file"
+done

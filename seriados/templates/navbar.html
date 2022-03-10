@@ -1,3 +1,20 @@
+{% if user.is_authenticated %}
+	<div class="dropdown">
+		<button 
+		class="btn btn-secondary dropdown-toggle" 
+		type="button" id="dropdownMenuButton2" 
+		data-bs-toggle="dropdown" 
+		aria-expanded="false">
+			Bem vindo, {{user.username}}
+		</button>
+		<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			<li><a class="dropdown-item" href={% url ’logout’ %}>Logout</a></li>
+		</ul>
+	</div>
+{% else %}
+	<a class="navbar-brand" href={% url ’login’ %}>Login</a>
+{% endif %}
+
 <a class="navbar-brand" href={% url 'seriados:home' %}>Home</a>
 <a class="navbar-brand" href={% url 'seriados:series_list' %}>Series</a>
 <a class="navbar-brand" href={% url 'seriados:temporada_list' %}>Temporadas</a>

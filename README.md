@@ -133,6 +133,11 @@ sudo docker-compose run --rm web python manage.py dumpdata --indent 2 > seriados
 sudo docker-compose run --rm web python manage.py flush
 ```
 
+#### Recriar e Popular banco
+```sh
+sudo docker-compose run --rm web ./populate_db
+```
+
 ### Permissões de arquivos ###
 Quando se cria arquivos dentro de um contâiner Docker eles irão pertencer ao contâiner, para mudar a permissão rode o seguinte comando:
 

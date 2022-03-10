@@ -25,4 +25,5 @@ urlpatterns = [
 	path('seriados/', include('seriados.urls')),
 	path('episodios/<int:pk>/', views.episodio_details, name='episodio_details'),
 	path('episodios/nota/<str:nota>/', views.episodio_nota_list, name='episodio_nota_list'),
+    path('accounts/', include('django.contrib.auth.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
