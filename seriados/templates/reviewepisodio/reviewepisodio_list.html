@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'seriados:home' %}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Revisões de Episódios</li>
+    </ol>
+</nav>
+
+<div class="flex-row center">
+    <div class="mt-1"><h1>Lista de Revisões de Episódios</h1></div>
+    <div class="ml-2">
+        <a href="{% url 'seriados:reviewepisodio_insert' %}">
+            <h3>
+                <button type="button" class="btn btn-secondary btn-sm mt-3">Inserir</button>
+            </h3>
+        </a>
+    </div>
+</div>
+
+<table class="table table-hover table-striped">
+    <tr>
+        <th>Episódio</th>
+        <th>Revisor</th>
+        <th>Nota</th>
+        <th class="text-center">Ações</th>
+    </tr>
+
+    {% for object in object_list %}
+        <tr>
+            <td>{{ object.episodio }}</td>
+            <td>{{ object.revisor }}</td>
+            <td>{{ object.nota }}</td>
+            <td class="text-center"><a href="{% url 'seriados:reviewepisodio_details' pk=object.pk %}"><i class="fa-solid fa-eye" title="Visualizar"></i></a>
+            <a href="{% url 'seriados:reviewepisodio_update' pk=object.pk %}"><i class="fa-solid fa-pen-to-square mx-1" title="Editar"></i></a>
+            <a href="{% url 'seriados:reviewepisodio_delete' pk=object.pk %}"><i class="fa-solid fa-trash" title="Deletar"></i></a></td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,29 +1,44 @@
 {% extends "base.html" %}
 
 {% block content %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'seriados:home' %}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Login</li>
+  </ol>
+</nav>
 
-{% if form.errors %}
-  <p>Usuário e/ou senha inválido. Tente novamente</p>
-{% endif %}
-
-
-{% if next %}
-  {% if user.is_authenticated %}
-    <p>Sua conta não tem acesso a esta página.
-      Tente uma conta com acesso ou outra página</p>
-  {% else %}
-    <p>Por favor faça seu login para ver esta página</p>
+<div class="row flex-row center mt-4"></div>
+  {% if form.errors %}
+    <p>Usuário e/ou senha inválido. Tente novamente</p>
   {% endif %}
-{% endif %}
 
-<form method="post" action="{% url 'login' %}">
-  {% csrf_token %}
-  <table>
-    <tr><td>{{form.username.label_tag}}</td> <td>{{form.username}}</td></tr>
-    <tr><td>{{form.password.label_tag}}</td> <td>{{form.password}}</td></tr>
-  </table>
-  <input type="submit" value="login">
-  <input type="hidden" name="next" value="{{ next }}">
-</form>
+  {% if next %}
+    {% if user.is_authenticated %}
+      <p>Sua conta não tem acesso a esta página.
+        Tente uma conta com acesso ou outra página</p>
+    {% else %}
+      <p>Por favor faça seu login para ver esta página</p>
+    {% endif %}
+  {% endif %}
+</div>
+
+<div class="row flex-row center mt-2"></div>
+  <div class="">
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      <div class="mb-3">
+        <input type="text" class="form-control" name="username" placeholder="Username">
+      </div>
+      <div class="mb-3">
+        <input type="password" class="form-control" name="password" placeholder="Password">
+      </div>
+      <div class="flex-row end">
+        <input class="btn btn-secondary" type="submit" value="login">
+        <input type="hidden" name="next" value="{{ next }}">
+      </div>
+    </form>
+  </div>
+</div>
 
 {% endblock %}

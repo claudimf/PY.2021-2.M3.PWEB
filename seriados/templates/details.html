@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-
-{% block content %}
-<h1>Detalhes de {{title}}</h1>
-
-{% for row in data %}
-    <p><b>{{ row.label }}</b>: {{ row.value }}</p>
-{% endfor %}
-{% endblock %}

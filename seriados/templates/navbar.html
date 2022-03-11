@@ -1,71 +1,48 @@
-{% if user.is_authenticated %}
-	<div class="dropdown">
-		<button 
-		class="btn btn-secondary dropdown-toggle" 
-		type="button" id="dropdownMenuButton2" 
-		data-bs-toggle="dropdown" 
-		aria-expanded="false">
-			Bem vindo, {{user.username}}
-		</button>
-		<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			<li><a class="dropdown-item" href={% url ’logout’ %}>Logout</a></li>
-		</ul>
-	</div>
-{% else %}
-	<a class="navbar-brand" href={% url ’login’ %}>Login</a>
-{% endif %}
+<!DOCTYPE html>
 
 <a class="navbar-brand" href={% url 'seriados:home' %}>Home</a>
-<a class="navbar-brand" href={% url 'seriados:series_list' %}>Series</a>
-<a class="navbar-brand" href={% url 'seriados:temporada_list' %}>Temporadas</a>
 
 <div class="dropdown">
-	<button 
-		class="btn btn-secondary dropdown-toggle" 
-		type="button" 
-		id="dropdownMenuButton" 
-		data-bs-toggle="dropdown" 
-		aria-expanded="false">
-		Episódios
-	</button>
-	<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-		<li>
-			<a class="dropdown-item" href={% url 'seriados:episodio_list' %}>
-				Todos
-			</a>
-		</li>
-		<li>
-			<a 
-				class="dropdown-item" 
-				href={% url 'seriados:episodio_busca_list' %}>
-				Busca Avançada
-			</a>
-		</li>
-		<li>
-			<a 
-				class="dropdown-item" 
-				href={% url 'seriados:episodio_nota_list' nota='A'%}>
-				Nota A
-			</a>
-		</li>
-		<li>
-			<a 
-			class="dropdown-item" 
-			href={% url 'seriados:episodio_nota_list' 
-			nota='B'%}>
-				Nota B
-			</a>
-		</li>
-		<li>
-			<a 
-			class="dropdown-item"
-			href={% url 'seriados:episodio_nota_list' 
-			nota='C'%}>
-				Nota C
-			</a>
-		</li>
-	</ul>
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+        Apps
+    </button>
+    
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="{% url 'seriados:series_list' %}">Séries</a></li>
+        <li><a class="dropdown-item" href="{% url 'seriados:temporada_list' %}">Temporadas</a></li>
+        <li><a class="dropdown-item" href="{% url 'seriados:episodio_list' %}">Episódios</a></li>
+        <li><a class="dropdown-item" href="{% url 'seriados:revisor_list' %}">Revisores</a></li>
+        <li><a class="dropdown-item" href="{% url 'seriados:reviewepisodio_list' %}">Reviews</a></li>
+    </ul>
 </div>
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
+        Episódios
+    </button>
+    
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="{% url 'seriados:episodio_list' %}">Todos</a></li>
+        <li><a class="dropdown-item" href="{% url 'seriados:episodio_busca_list' %}">Busca Avançada</a></li>
+        <li><a class="dropdown-item" href="{% url 'seriados:episodio_nota_list' nota='A'%}">Nota A</a></li>
+        <li><a class="dropdown-item" href="{% url 'seriados:episodio_nota_list' nota='B'%}">Nota B</a></li>
+        <li><a class="dropdown-item" href="{% url 'seriados:episodio_nota_list' nota='C'%}">Nota C</a></li>
+    </ul>
+</div>
+
 <a class="navbar-brand" href={% url 'seriados:about' %}>Sobre</a>
 <a class="navbar-brand" href={% url 'seriados:contact' %}>Contato</a>
 <a class="navbar-brand" href={% url 'admin:index' %}>ADMIN</a>
+
+{% if user.is_authenticated %}
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-expanded="false">
+            Bem vindo, {{user.username}}
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+            <li><a class="dropdown-item" href={% url 'logout' %}>Logout</a></li>
+        </ul>
+    </div>
+{% else %}
+    <a class="navbar-brand" href={% url 'login' %}>Login</a>
+{% endif %}

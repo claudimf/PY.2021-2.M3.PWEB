@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-python manage.py sqlflush
-python manage.py makemigrations
+python manage.py reset_db --noinput
 python manage.py migrate
 
 for file in ./seriados/fixtures/*.json

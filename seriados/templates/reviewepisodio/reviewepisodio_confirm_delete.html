@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'seriados:home' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url list_url %}">Lista de {{ title }}</a></li>
+        <li class="breadcrumb-item"><a href="{% url detail_url pk=object.pk %}">{{ title }}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ action }}</li>
+    </ol>
+</nav>
+
+<div class="text-center mt-3">
+    Quer <b>{{ action }}</b> o {{ title }}: <b>{{ object.episodio }}</b>,
+    do Revisor: <b>{{ object.revisor }}</b>, que tem a nota <b>{{ object.nota }}</b>?
+    <br/><br/>
+    <form action="." method="post">
+        {% csrf_token %}
+        <input class="btn btn-danger" type="submit" value="{{ action }}">
+    </form>
+</div>
+{% endblock %}

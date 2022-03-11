@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'seriados:home' %}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ title }}</li>
+    </ol>
+</nav>
+
+<div class="row pesquisar my-3">
+    <div class="col-6 col-md-8 text-center">
+        <h3>Procurar {{ title }}</h3>
+        <div class="flex-row">
+            <input class="form-control" id='input_search' type="text" placeholder="Search..">
+            <button class="btn btn-secondary ml-2" id="btn_search">Procurar</button>
+        </div>
+    </div>
+</div>
+
+<div class="flex-row center">
+    <div class="mt-1"><h1>Lista de {{ title }}</h1></div>
+    <div class="ml-2">
+        <a href='{% url insert_url %}'>
+            <h3>
+                <button type="button" class="btn btn-secondary btn-sm mt-3">Inserir</button>
+            </h3>
+        </a>
+    </div>
+</div>
+
+<table class="table table-hover table-striped">
+    <tr>
+        {% for label in labels %}
+            <th>{{ label }}</th>
+        {% endfor %}
+        <th class="text-center">Ações</th>
+    </tr>
+
+    {% for row in rows %}
+        <tr>
+            {% for value in row.data %}
+                <td>{{ value }}</td>
+            {% endfor %}
+            <td class="text-center"><a href="{% url detail_url pk=row.pk %}"><i class="fa-solid fa-eye" title="Visualizar"></i></a>
+            <a href="{% url update_url pk=row.pk %}"><i class="fa-solid fa-pen-to-square mx-1" title="Editar"></i></a>
+            <a href="{% url delete_url pk=row.pk %}"><i class="fa-solid fa-trash" title="Deletar"></i></a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#btn_search").click(function() {
+            search = $("#input_search").val();
+            url = '{% url list_url %}' + '?' +
+                $.param({search:search});
+            window.location.href = url;
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'seriados:home' %}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ title }}</li>
+    </ol>
+</nav>
+
+<div class="row pesquisar my-3">
+    <div class="col-6 col-md-8 text-center">
+        <h3>Procurar {{ title }}</h3>
+        <div class="flex-row">
+            <input class="form-control" id='input_search' type="text" placeholder="Search.." value="{{view.request.GET.search}}">
+            <button class="btn btn-secondary ml-2" id="btn_search">Procurar</button>
+        </div>
+    </div>
+</div>
+
+<div class="flex-row center">
+    <div class="mt-1">
+        <h1>Lista de {{ title }}</h1>
+    </div>
+    <div class="ml-2">
+        <a href='{% url insert_url %}'>
+            <h3>
+                <button type="button" class="btn btn-secondary btn-sm mt-3">Inserir</button>
+            </h3>
+        </a>
+    </div>
+</div>
+
+<table class="table table-hover table-striped">
+    <tr>
+        <th>Série</th>
+        <th>Temporada</th>
+        <th>Título</th>
+        <th>Data</th>
+        <th>Detalhes</th>
+    </tr>
+
+    {% for object in object_list %}
+        <tr>
+            <td>{{ object.temporada.serie.nome }}</td>
+            <td>{{ object.temporada.numero }}</td>
+            <td>{{ object.titulo }}</td>
+            <td>{{ object.data }}</td>
+            <td>
+                <a href="{% url detail_url pk=object.pk %}">
+                    <i class="fa-solid fa-eye" title="Visualizar"></i>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#btn_search").click(function() {
+            search = $("#input_search").val();
+            url = '{% url 'seriados:episodio_busca_list' %}' + '?' +
+                $.param({search:search});
+            window.location.href = url;
+        });
+    });
+</script>
+{% endblock %}

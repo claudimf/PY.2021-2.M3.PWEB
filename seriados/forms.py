@@ -1,5 +1,5 @@
 from django import forms
-from .models import Serie, Temporada, Episodio
+from .models import Serie, Temporada, Episodio, Revisor, ReviewEpisodio
 
 
 class SerieForm(forms.Form):
@@ -10,3 +10,21 @@ class TemporadaForm(forms.ModelForm):
 	class Meta:
 		model = Temporada
 		fields = ['numero', 'serie']
+
+
+class RevisorForm(forms.ModelForm):
+    class Meta:
+        model = Revisor
+        fields = ['user']
+
+
+class ReviewEpisodioForm(forms.ModelForm):
+    class Meta:
+        model = ReviewEpisodio
+        fields = ['episodio', 'revisor', 'nota']
+
+
+class EpisodioForm(forms.ModelForm):
+    class Meta:
+        model = Episodio
+        fields = ['temporada', 'data', 'titulo']

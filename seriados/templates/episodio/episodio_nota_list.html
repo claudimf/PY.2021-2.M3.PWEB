@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Lista de Episódios com nota {{ nota }}</h1>
+
+<table class="table table-hover table-striped">
+    <tr>
+        <th>titulo</th>
+        <th>data</th>
+        <th>temporada</th>
+    </tr>
+{% for obj in objects %}
+    <tr>
+        <td>{{obj.titulo}}</td>
+        <td>{{obj.data}}</td>
+        <td>{{obj.temporada.numero}}</td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}

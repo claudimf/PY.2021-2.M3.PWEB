@@ -1,0 +1,34 @@
+
+html { 
+	height:100%;
+}
+
+body { 
+	position:absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+}
+
+.pesquisar {
+	display: flex;
+	justify-content: center;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.around {
+	justify-content: space-around;
+}
+
+.center {
+	justify-content: center;
+}
+
+.end {
+	justify-content: end;
+}
