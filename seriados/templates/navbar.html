@@ -40,7 +40,7 @@
             Bem vindo, {{user.username}}
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-            <li><a class="dropdown-item" href={% url 'logout' %}>Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'logout' %}?next=/">Logout</a></li>
         </ul>
     </div>
 {% else %}
