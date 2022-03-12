@@ -1,0 +1,65 @@
+[
+{
+  "model": "seriados.reviewepisodio",
+  "pk": 1,
+  "fields": {
+    "episodio": 1,
+    "revisor": 1,
+    "nota": "A"
+  }
+},
+{
+  "model": "seriados.reviewepisodio",
+  "pk": 2,
+  "fields": {
+    "episodio": 1,
+    "revisor": 2,
+    "nota": "C"
+  }
+},
+{
+  "model": "seriados.reviewepisodio",
+  "pk": 3,
+  "fields": {
+    "episodio": 1,
+    "revisor": 2,
+    "nota": "C"
+  }
+},
+{
+  "model": "seriados.reviewepisodio",
+  "pk": 4,
+  "fields": {
+    "episodio": 2,
+    "revisor": 2,
+    "nota": "B"
+  }
+},
+{
+  "model": "seriados.reviewepisodio",
+  "pk": 5,
+  "fields": {
+    "episodio": 2,
+    "revisor": 1,
+    "nota": "A"
+  }
+},
+{
+  "model": "seriados.reviewepisodio",
+  "pk": 6,
+  "fields": {
+    "episodio": 12,
+    "revisor": 1,
+    "nota": "B"
+  }
+},
+{
+  "model": "seriados.reviewepisodio",
+  "pk": 7,
+  "fields": {
+    "episodio": 12,
+    "revisor": 2,
+    "nota": "B"
+  }
+}
+]

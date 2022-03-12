@@ -14,5 +14,13 @@
     "numero": 1,
     "serie": 2
   }
+},
+{
+  "model": "seriados.temporada",
+  "pk": 3,
+  "fields": {
+    "numero": 1,
+    "serie": 3
+  }
 }
 ]

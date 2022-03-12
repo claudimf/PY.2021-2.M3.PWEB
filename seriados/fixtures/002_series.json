@@ -3,7 +3,7 @@
   "model": "seriados.serie",
   "pk": 1,
   "fields": {
-    "nome": "Fawlty Towers 2"
+    "nome": "Stranger Things"
   }
 },
 {
@@ -11,6 +11,13 @@
   "pk": 2,
   "fields": {
     "nome": "Peaky Blinders"
+  }
+},
+{
+  "model": "seriados.serie",
+  "pk": 3,
+  "fields": {
+    "nome": "Umbrella Academy"
   }
 }
 ]

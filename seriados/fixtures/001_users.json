@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$320000$sKCrGiCAbpn3qglcE3eSc7$FUI7tG6YHk89mZ/rOl3NncConsmqfkmca2LcuIwcUSM=",
-    "last_login": "2022-03-12T02:31:59.517Z",
+    "last_login": "2022-03-12T22:12:57.698Z",
     "is_superuser": true,
     "username": "teste",
     "first_name": "",
@@ -15,6 +15,68 @@
     "date_joined": "2022-03-05T20:10:19.925Z",
     "groups": [],
     "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$320000$FAivQMhDiUm0GM5MQRW0HH$qBsel6+MSR6Ugvk9IYrnLonWk9pBcHMgYmBWSWc31Kg=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "claudifreitas",
+    "first_name": "claudi",
+    "last_name": "freitas",
+    "email": "claudi@teste.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-03-12T22:13:46Z",
+    "groups": [],
+    "user_permissions": [
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$320000$Rp8FzphmlyRCyxpx5a1bj6$Sjf7CSV4CQXPpO2yvDhvonQKHwGAGY7laf1af6+qFes=",
+    "last_login": "2022-03-12T22:07:34.323Z",
+    "is_superuser": true,
+    "username": "revisorum",
+    "first_name": "revisor",
+    "last_name": "um",
+    "email": "revisorum@teste.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-03-12T22:06:44Z",
+    "groups": [],
+    "user_permissions": [
+      37,
+      38,
+      39,
+      40
+    ]
   }
 }
 ]

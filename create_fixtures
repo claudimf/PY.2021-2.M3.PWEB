@@ -10,3 +10,5 @@ python manage.py dumpdata auth.user --indent 2 > seriados/fixtures/001_users.jso
 python manage.py dumpdata seriados.serie --indent 2 > seriados/fixtures/002_series.json
 python manage.py dumpdata seriados.temporada --indent 2 > seriados/fixtures/003_temporadas.json
 python manage.py dumpdata seriados.episodio --indent 2 > seriados/fixtures/004_episodios.json
+python manage.py dumpdata seriados.revisor --indent 2 > seriados/fixtures/005_revisores.json
+python manage.py dumpdata seriados.reviewepisodio --indent 2 > seriados/fixtures/006_reviewepisodio.json

@@ -122,18 +122,6 @@ sudo docker-compose run --rm web python manage.py createsuperuser
 sudo docker-compose run -d postgres
 ```
 
-#### Criar um dump do banco de dados
-
-```sh
-sudo docker-compose run --rm web python manage.py dumpdata --indent 2 > seriados/fixtures/seu_dump.json
-```
-
-#### Limpar banco de dados
-
-```sh
-sudo docker-compose run --rm web python manage.py flush
-```
-
 #### Criar fixtures
 ```sh
 sudo docker-compose run --rm web ./create_fixtures

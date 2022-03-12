@@ -3,8 +3,8 @@
   "model": "seriados.episodio",
   "pk": 1,
   "fields": {
-    "data": "1975-09-19",
-    "titulo": "A Touch of Class",
+    "data": "2016-07-15",
+    "titulo": "Chapter One: The Vanishing of Will Byers",
     "temporada": 1
   }
 },
@@ -12,9 +12,117 @@
   "model": "seriados.episodio",
   "pk": 2,
   "fields": {
-    "data": "2013-12-09",
+    "data": "2013-09-12",
     "titulo": "Episode 1",
     "temporada": 2
+  }
+},
+{
+  "model": "seriados.episodio",
+  "pk": 3,
+  "fields": {
+    "data": "2016-07-15",
+    "titulo": "Chapter Two: The Weirdo on Maple Street",
+    "temporada": 1
+  }
+},
+{
+  "model": "seriados.episodio",
+  "pk": 4,
+  "fields": {
+    "data": "2016-07-15",
+    "titulo": "Chapter Three: Holly, Jolly",
+    "temporada": 1
+  }
+},
+{
+  "model": "seriados.episodio",
+  "pk": 5,
+  "fields": {
+    "data": "2016-07-15",
+    "titulo": "Chapter Four: The Body",
+    "temporada": 1
+  }
+},
+{
+  "model": "seriados.episodio",
+  "pk": 6,
+  "fields": {
+    "data": "2016-07-15",
+    "titulo": "Chapter Five: The Flea and the Acrobat",
+    "temporada": 1
+  }
+},
+{
+  "model": "seriados.episodio",
+  "pk": 7,
+  "fields": {
+    "data": "2016-07-15",
+    "titulo": "Chapter Six: The Monster",
+    "temporada": 1
+  }
+},
+{
+  "model": "seriados.episodio",
+  "pk": 8,
+  "fields": {
+    "data": "2016-07-15",
+    "titulo": "Chapter Seven: The Bathtub",
+    "temporada": 1
+  }
+},
+{
+  "model": "seriados.episodio",
+  "pk": 9,
+  "fields": {
+    "data": "2016-07-15",
+    "titulo": "Chapter Eight: The Upside Down",
+    "temporada": 1
+  }
+},
+{
+  "model": "seriados.episodio",
+  "pk": 10,
+  "fields": {
+    "data": "2013-09-19",
+    "titulo": "Episode 2",
+    "temporada": 2
+  }
+},
+{
+  "model": "seriados.episodio",
+  "pk": 11,
+  "fields": {
+    "data": "2013-09-26",
+    "titulo": "Episode 3",
+    "temporada": 2
+  }
+},
+{
+  "model": "seriados.episodio",
+  "pk": 12,
+  "fields": {
+    "data": "2019-02-15",
+    "titulo": "We Only See Each Other at Weddings and Funerals",
+    "temporada": 3
+  }
+},
+{
+  "model": "seriados.episodio",
+  "pk": 13,
+  "fields": {
+    "data": "2019-02-15",
+    "titulo": "Run Boy Run",
+    "temporada": 3
+  }
+},
+{
+  "model": "seriados.episodio",
+  "pk": 14,
+  "fields": {
+    "data": "2019-02-15",
+    "titulo": "Extra Ordnary",
+    "temporada": 3
   }
 }
 ]
