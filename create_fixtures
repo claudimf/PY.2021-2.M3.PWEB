@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+for file in ./seriados/fixtures/*.json
+do
+echo "removing fixture: $file"
+  rm "$file"
+done
+
+python manage.py dumpdata auth.user --indent 2 > seriados/fixtures/001_users.json
+python manage.py dumpdata seriados.serie --indent 2 > seriados/fixtures/002_series.json
+python manage.py dumpdata seriados.temporada --indent 2 > seriados/fixtures/003_temporadas.json
+python manage.py dumpdata seriados.episodio --indent 2 > seriados/fixtures/004_episodios.json

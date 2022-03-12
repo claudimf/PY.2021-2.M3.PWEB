@@ -1,0 +1,16 @@
+[
+{
+  "model": "seriados.serie",
+  "pk": 1,
+  "fields": {
+    "nome": "Fawlty Towers 2"
+  }
+},
+{
+  "model": "seriados.serie",
+  "pk": 2,
+  "fields": {
+    "nome": "Peaky Blinders"
+  }
+}
+]

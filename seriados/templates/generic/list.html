@@ -11,7 +11,7 @@
 <div class="row pesquisar my-3">
     <div class="col-6 col-md-8 text-center">
         <h3>Procurar {{ title }}</h3>
-        <div class="flex-row">
+        <div class="row">
             <input class="form-control" id='input_search' type="text" placeholder="Search..">
             <button class="btn btn-secondary ml-2" id="btn_search">Procurar</button>
         </div>
@@ -42,9 +42,12 @@
             {% for value in row.data %}
                 <td>{{ value }}</td>
             {% endfor %}
-            <td class="text-center"><a href="{% url detail_url pk=row.pk %}"><i class="fa-solid fa-eye" title="Visualizar"></i></a>
-            <a href="{% url update_url pk=row.pk %}"><i class="fa-solid fa-pen-to-square mx-1" title="Editar"></i></a>
-            <a href="{% url delete_url pk=row.pk %}"><i class="fa-solid fa-trash" title="Deletar"></i></a></td>
+
+            <td class="text-center">
+                <a href="{% url detail_url pk=row.pk %}"><i class="fa-solid fa-eye" title="Visualizar"></i></a>
+                <a href="{% url update_url pk=row.pk %}"><i class="fa-solid fa-pen-to-square mx-1" title="Editar"></i></a>
+                <a href="{% url delete_url pk=row.pk %}"><i class="fa-solid fa-trash" title="Deletar"></i></a>
+            </td>
         </tr>
     {% endfor %}
 </table>

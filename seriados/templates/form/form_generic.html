@@ -6,7 +6,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{% url 'seriados:home' %}">Home</a></li>
-        <li class="breadcrumb-item"><a href="{% url list_url %}">Lista de {{ title }}</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'seriados:series_list' %}">Lista de {{ title }}</a></li>
         <li class="breadcrumb-item active" aria-current="page">{{ action }}</li>
     </ol>
 </nav>

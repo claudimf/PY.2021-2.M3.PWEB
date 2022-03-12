@@ -134,6 +134,11 @@ sudo docker-compose run --rm web python manage.py dumpdata --indent 2 > seriados
 sudo docker-compose run --rm web python manage.py flush
 ```
 
+#### Criar fixtures
+```sh
+sudo docker-compose run --rm web ./create_fixtures
+```
+
 #### Recriar e Popular banco
 ```sh
 sudo docker-compose run --rm web ./populate_db
@@ -150,3 +155,4 @@ sudo chown -R $USER:$USER .
 [1° Django + Docker](https://github.com/claudimf/django-docker)  
 [2° Dockerizing Django with Postgres, Gunicorn, and Nginx](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/)  
 [3° How to provide initial data for models](https://docs.djangoproject.com/en/4.0/howto/initial-data/)  
+[4° Django: setup básico com Bootstrap](https://dev.to/thalesbruno/django-projeto-generico-com-bootstrap-3d86)  

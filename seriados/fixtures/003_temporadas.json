@@ -1,0 +1,18 @@
+[
+{
+  "model": "seriados.temporada",
+  "pk": 1,
+  "fields": {
+    "numero": 1,
+    "serie": 1
+  }
+},
+{
+  "model": "seriados.temporada",
+  "pk": 2,
+  "fields": {
+    "numero": 1,
+    "serie": 2
+  }
+}
+]

@@ -1,0 +1,20 @@
+[
+{
+  "model": "seriados.episodio",
+  "pk": 1,
+  "fields": {
+    "data": "1975-09-19",
+    "titulo": "A Touch of Class",
+    "temporada": 1
+  }
+},
+{
+  "model": "seriados.episodio",
+  "pk": 2,
+  "fields": {
+    "data": "2013-12-09",
+    "titulo": "Episode 1",
+    "temporada": 2
+  }
+}
+]
