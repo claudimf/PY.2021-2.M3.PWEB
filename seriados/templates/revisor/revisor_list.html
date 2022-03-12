@@ -30,9 +30,11 @@
         <tr>
             <td>{{ object.user }}</td>
             <td>{{ object.reviews_episodios.count }}</td>
-            <td class="text-center"><a href="{% url 'seriados:revisor_details' pk=object.pk %}"><i class="fa-solid fa-eye" title="Visualizar"></i></a>
-            <a href="{% url 'seriados:revisor_update' pk=object.pk %}"><i class="fa-solid fa-pen-to-square mx-1" title="Editar"></i></a>
-            <a href="{% url 'seriados:revisor_delete' pk=object.pk %}"><i class="fa-solid fa-trash" title="Deletar"></i></a></td>
+            <td class="text-center">
+                <a href="{% url 'seriados:revisor_details' pk=object.pk %}"><i class="fa-solid fa-eye" title="Visualizar"></i></a>
+                <a href="{% url 'seriados:revisor_update' pk=object.pk %}"><i class="fa-solid fa-pen-to-square mx-1" title="Editar"></i></a>
+                <a href="{% url 'seriados:revisor_delete' pk=object.pk %}"><i class="fa-solid fa-trash" title="Deletar"></i></a>
+            </td>
         </tr>
     {% endfor %}
 </table>

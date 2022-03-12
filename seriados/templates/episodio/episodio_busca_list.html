@@ -8,10 +8,10 @@
     </ol>
 </nav>
 
-<div class="row pesquisar my-3">
-    <div class="col-6 col-md-8 text-center">
+<div class="container">
+    <div class="row">
         <h3>Procurar {{ title }}</h3>
-        <div class="flex-row">
+        <div class="col-md-12 bg-light text-right">
             <input class="form-control" id='input_search' type="text" placeholder="Search.." value="{{view.request.GET.search}}">
             <button class="btn btn-secondary ml-2" id="btn_search">Procurar</button>
         </div>
@@ -47,9 +47,9 @@
             <td>{{ object.titulo }}</td>
             <td>{{ object.data }}</td>
             <td>
-                <a href="{% url detail_url pk=object.pk %}">
-                    <i class="fa-solid fa-eye" title="Visualizar"></i>
-                </a>
+                <a href="{% url 'seriados:episodio_details' pk=object.pk %}"><i class="fa-solid fa-eye" title="Visualizar"></i></a>
+                <a href="{% url 'seriados:episodio_update' pk=object.pk %}"><i class="fa-solid fa-pen-to-square mx-1" title="Editar"></i></a>
+                <a href="{% url 'seriados:episodio_delete' pk=object.pk %}"><i class="fa-solid fa-trash" title="Deletar"></i></a></td>
             </td>
         </tr>
     {% endfor %}

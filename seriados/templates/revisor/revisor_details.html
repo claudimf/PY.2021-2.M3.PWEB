@@ -12,10 +12,7 @@
 <div class="text-center mt-3">
     <h1>Detalhes do {{ title }}</h1>
     
-    <div class="flex-row center">
-        <p><a href="{% url 'seriados:revisor_update' pk=pk %}"><i class="fa-solid fa-pen-to-square mr-3" title="Editar"></i></a></p>
-        <p><a href="{% url 'seriados:revisor_delete' pk=pk %}"><i class="fa-solid fa-trash" title="Deletar"></i></a></p>
-    </div>
+    
     <p><b>{{ title }}</b>: {{ objects.first.revisor }}</p>
 </div>
 
@@ -23,12 +20,17 @@
     <tr>
         <th>Episódio(s) revistos</th>
         <th>Nota</th>
+        <th></th>
     </tr>
 
     {% for object in objects %}
         <tr>
             <td>{{ object.episodio }}</td>
             <td>{{ object.nota }}</td>
+            <td>
+                <a href="{% url 'seriados:reviewepisodio_update' pk=pk %}"><i class="fa-solid fa-pen-to-square mr-3" title="Editar"></i></a>
+                <a href="{% url 'seriados:reviewepisodio_delete' pk=pk %}"><i class="fa-solid fa-trash" title="Deletar"></i></a>
+            </td>
         </tr>
     {% endfor %}
 </table>

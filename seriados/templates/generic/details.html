@@ -11,14 +11,13 @@
 
 <div class="text-center mt-3">
     <h1>Detalhes da(o) {{ title }}</h1>
-    
-    <div class="flex-row center">
-        <p><a href="{% url update_url pk=pk %}"><i class="fa-solid fa-pen-to-square mr-3" title="Editar"></i></a></p>
-        <p><a href="{% url delete_url pk=pk %}"><i class="fa-solid fa-trash" title="Deletar"></i></a></p>
-    </div>
-    
     {% for row in data %}
     <p><b>{{ row.label }}</b>: {{ row.value }}</p>
     {% endfor %}
+
+    <div class="flex-row center">
+        <p><a href="{% url update_url pk=pk %}"><i class="fa-solid fa-pen-to-square mr-3" title="Editar"></i></a>
+        <a href="{% url delete_url pk=pk %}"><i class="fa-solid fa-trash" title="Deletar"></i></a></p>
+    </div>
 </div>
 {% endblock %}

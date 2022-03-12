@@ -2,15 +2,18 @@
 {% load static %}
 {% block content %}
 
-<div class="row pesquisar my-3">
-    <div class="col-6 col-md-8 text-center">
+
+{% if request.user.is_authenticated %}
+<div class="container">
+    <div class="row">
         <h3>Procurar Episódio</h3>
-        <div class="flex-row">
+        <div class="col-md-12 bg-light text-right">
             <input class="form-control" id='input_search' type="text" placeholder="Search..">
             <button class="btn btn-secondary ml-2" id="btn_search">Procurar</button>
         </div>
     </div>
 </div>
+{% endif %}
 
 <h3 class="text-center"><b>Especialização em Tecnologia Python para Negócios</b></h3>
 <h3 class="text-center"><b>M3.Python para WEB</b></h3>
